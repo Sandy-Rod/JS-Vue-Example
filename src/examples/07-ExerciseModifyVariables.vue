@@ -34,7 +34,7 @@ export default {
       class="w-32 border-2 rounded-lg bg-gray-100 hover:bg-blue-100 border-blue-400"
       @mouseover="mouseOver"
     >
-      otro texto aleatorio
+      otro texto aleatorio 2
     </button>
     <p>{{ palabraAleatoria }}</p>
 
