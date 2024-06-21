@@ -1,29 +1,19 @@
 <script>
+import ContactCard from "@/components/ContactCard.vue";
+
 export default {
   data() {
     return {
-      detailsAreVisible: false,
-      friends: [
-        {
-          id: "manuel",
-          name: "Manuel Lorenzo",
-          phone: "01234 5678 991",
-          email: "manuel@localhost.com",
-        },
-        {
-          id: "julie",
-          name: "Julie Jones",
-          phone: "09876 543 221",
-          email: "julie@localhost.com",
-        },
-      ],
-    };
+      contacts: [
+        {id: 1, name: "Santi", phone: "02934785", email: "asss@sd.com"},
+        {id: 2, name: "Laia", phone: "02934785", email: "asss@sd.com"},
+        { id: 3, name: "Jordi", phone: "02934785", email: "asss@sd.com"},
+      ]
+    }
   },
-  methods: {
-    toggleDetails() {
-      this.detailsAreVisible = !this.detailsAreVisible;
-    },
-  },
+  components: {
+    ContactCard
+  }
 };
 </script>
 
@@ -32,19 +22,7 @@ export default {
     <h1>Start here for the components exercise</h1>
     <section>
       <ul>
-        <li class="card" v-for="friend in friends" :key="friend.id">
-          <h2>{{ friend.name }}</h2>
-          <button @click="toggleDetails()">
-            {{ detailsAreVisible ? "Hide" : "Show" }} Details
-          </button>
-          <ul v-if="detailsAreVisible">
-            <li><strong>Phone:</strong> {{ friend.phone }}</li>
-            <li><strong>Email:</strong> {{ friend.email }}</li>
-          </ul>
-          <button class="ml-8" @click="toggleDetails()">
-            See more ->
-          </button>
-        </li>
+        <ContactCard v-for="contact in contacts" :name="contact.name" :phone="contact.phone" :email="contact.email"/>
       </ul>
     </section>
   </div>
