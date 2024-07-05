@@ -1,3 +1,6 @@
+<!-- npm install
+npm run dev -->
+
 <script>
 export default {
   data() {
